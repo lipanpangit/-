@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script >
+		var a=[];
+		for(var i=0;i<10;i++){
+			a[i] = function(){
+				console.log(i)
+			}
+		}
+		a[6]();//传参和调用
+		console.log(a[6]())
+
+		var b=[];
+		for(let i=0;i<10;i++){
+			b[i]=function(){
+				console.log(i)
+			}
+		}
+		b[6]()
+		console.log(b[6]())//6
+		// 原因是let生命的变量仅仅在快级作用域内有效，
+
+		for(let i=0;i<3;i++){
+			let i=1;
+			console.log(i);//输出了三次1
+		}
+
+		console.log(foo)
+		var foo=1;//undefined说明foo已经存在，只是没有值
+
+		console.log(bar)
+		let bar=0;// bar is not defined直接报错说明bar根本就不存在
+
+		// 上面的两种结果表名，var定义的变量提升，而let没有、
+		// 变量提升的意思：变量在声明之前使用，值为undefined
+	</script>
+</body>
+</html>
